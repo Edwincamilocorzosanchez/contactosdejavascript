@@ -1,3 +1,6 @@
+import './regCompanys.js';
+import './lstCompany.js';
+
 export class CompaniaComponent extends HTMLElement {
   constructor() {
     super();
@@ -12,14 +15,45 @@ export class CompaniaComponent extends HTMLElement {
           color: white;
         }
       </style>
-      <div class="alert alert-info mt-3" role="alert">
-        <h4 class="alert-heading">Módulo de Compañías</h4>
-        <p>Este módulo está en construcción.</p>
-        <hr>
-        <p class="mb-0">Próximamente podrás gestionar las compañías aquí.</p>
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active mnucompany" href="#" data-view="reg">Registrar Compañia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mnucompany" href="#" data-view="list">Listado de Compañias</a>
+        </li>
+      </ul>
+      <div class="container" id="regCompanys" style="display:block;">
+        <reg-company></reg-company>
       </div>
+      <div class="container" id="lstCompany" style="display:none;">
+        <lst-company></lst-company>
+      </div>    
     `;
+    
+    this.querySelectorAll(".mnucompany").forEach((tab) => {
+      tab.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        
+        const view = e.target.dataset.view;
+        
+        this.querySelectorAll(".mnucompany").forEach(t => t.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        if (view === 'reg') {
+          document.querySelector('#regCompanys').style.display = 'block';
+          document.querySelector('#lstCompany').style.display = 'none';
+        } else {
+          document.querySelector('#regCompanys').style.display = 'none';
+          document.querySelector('#lstCompany').style.display = 'block';
+          const lstComponent = document.querySelector('lst-company');
+          if (lstComponent) lstComponent.cargarCiudades();
+        }
+      });
+    });
   }
 }
 
-customElements.define("compania-component", CompaniaComponent);
+customElements.define("ciudad-component", CompaniaComponent);
+

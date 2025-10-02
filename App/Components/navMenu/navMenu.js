@@ -45,7 +45,6 @@ export class NavMenu extends HTMLElement{
               const mainContent = document.querySelector('#mainContent');
               mainContent.innerHTML = "";
               
-              // Remover clase active de todos los links
               this.querySelectorAll(".nav-link").forEach(l => l.classList.remove('active'));
               e.target.classList.add('active');
               
