@@ -1,5 +1,4 @@
-import { getPaises } from '../../../Apis/contact/apiConfig';
-
+import { getPaises } from '../../../Apis/contact/apiConfig.js';
 export class LstPais extends HTMLElement {
   constructor() {
     super();
