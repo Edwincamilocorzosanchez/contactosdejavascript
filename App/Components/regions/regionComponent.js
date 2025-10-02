@@ -1,5 +1,5 @@
 import './regRegion.js';
-import '.lstRegion.js';
+import './lstRegion.js';
 
 export class RegionComponent extends HTMLElement {
   constructor() {
