@@ -1,1 +1,24 @@
-{}
+{
+  "paises": [
+    {
+      "id": "5be8",
+      "nombrePais": "Colombia"
+    }
+  ],
+  "regiones": [
+    {
+      "id": "0ddd",
+      "nombreRegion": "Santander",
+      "paisId": "5be8"
+    }
+  ],
+  "ciudades": [
+    {
+      "id": "06a1",
+      "nombreCiudad": "Piedecuesta",
+      "regionId": "0ddd"
+    }
+  ],
+  "companias": [],
+  "sucursales": []
+}
