@@ -20,13 +20,9 @@ export class RegPais extends HTMLElement {
         <div class="card-body">
           <form id="frmPais">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <label for="nombrePais" class="form-label">Nombre del País</label>
                 <input type="text" class="form-control" id="nombrePais" name="nombrePais" required>
-              </div>
-              <div class="col-md-6">
-                <label for="codigoPais" class="form-label">Código del País</label>
-                <input type="text" class="form-control" id="codigoPais" name="codigoPais" placeholder="Ej: CO, US, MX" required>
               </div>
             </div>
             <div class="row mt-3">
@@ -70,8 +66,8 @@ export class RegPais extends HTMLElement {
     const form = this.querySelector('#frmPais');
     const data = Object.fromEntries(new FormData(form).entries());
     
-    if (!data.nombrePais || !data.codigoPais) {
-      alert('Por favor complete todos los campos');
+    if (!data.nombrePais) {
+      alert('Por favor complete el nombre del país');
       return;
     }
 

@@ -74,12 +74,6 @@ export class RegCiudad extends HTMLElement {
                 <small class="text-muted">Debe existir al menos una región registrada</small>
               </div>
             </div>
-            <div class="row mt-2">
-              <div class="col-md-12">
-                <label for="codigoCiudad" class="form-label">Código de Ciudad (Opcional)</label>
-                <input type="text" class="form-control" id="codigoCiudad" name="codigoCiudad" placeholder="Ej: BGA, BOG">
-              </div>
-            </div>
             <div class="row mt-3">
               <div class="col">
                 <div class="container mt-4 text-center">

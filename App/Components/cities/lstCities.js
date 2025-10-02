@@ -37,7 +37,7 @@ export class LstCiudad extends HTMLElement {
     if (this.ciudades.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="5" class="text-center">No hay ciudades registradas</td>
+          <td colspan="4" class="text-center">No hay ciudades registradas</td>
         </tr>
       `;
       return;
@@ -47,7 +47,6 @@ export class LstCiudad extends HTMLElement {
       <tr>
         <td>${ciudad.id}</td>
         <td>${ciudad.nombreCiudad || 'N/A'}</td>
-        <td>${ciudad.codigoCiudad || 'N/A'}</td>
         <td>${this.regiones[ciudad.regionId] || 'Región no encontrada'}</td>
         <td><span class="badge bg-info">${ciudad.regionId || 'N/A'}</span></td>
       </tr>
@@ -58,7 +57,7 @@ export class LstCiudad extends HTMLElement {
     const tbody = this.querySelector('#tbodyCiudades');
     tbody.innerHTML = `
       <tr>
-        <td colspan="5" class="text-center text-danger">
+        <td colspan="4" class="text-center text-danger">
           Error al cargar las ciudades. Por favor, intente nuevamente.
         </td>
       </tr>
@@ -71,7 +70,7 @@ export class LstCiudad extends HTMLElement {
         <div class="card-header d-flex justify-content-between align-items-center">
           <span>Listado de Ciudades</span>
           <button class="btn btn-primary btn-sm" id="btnRecargar">
-            🔄 Recargar
+            Recargar
           </button>
         </div>
         <div class="card-body">
@@ -81,14 +80,13 @@ export class LstCiudad extends HTMLElement {
                 <tr>
                   <th>ID</th>
                   <th>Nombre de la Ciudad</th>
-                  <th>Código</th>
                   <th>Región</th>
                   <th>ID Región</th>
                 </tr>
               </thead>
               <tbody id="tbodyCiudades">
                 <tr>
-                  <td colspan="5" class="text-center">
+                  <td colspan="4" class="text-center">
                     <div class="spinner-border text-primary" role="status">
                       <span class="visually-hidden">Cargando...</span>
                     </div>
@@ -109,7 +107,7 @@ export class LstCiudad extends HTMLElement {
       await this.cargarCiudades();
       
       btn.disabled = false;
-      btn.innerHTML = '🔄 Recargar';
+      btn.innerHTML = 'Recargar';
     });
   }
 }

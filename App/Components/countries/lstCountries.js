@@ -1,4 +1,5 @@
 import { getPaises } from '../../../Apis/contact/apiConfig.js';
+
 export class LstPais extends HTMLElement {
   constructor() {
     super();
@@ -23,7 +24,7 @@ export class LstPais extends HTMLElement {
     if (this.paises.length === 0) {
       tbody.innerHTML = `
         <tr>
-          <td colspan="3" class="text-center">No hay países registrados</td>
+          <td colspan="2" class="text-center">No hay países registrados</td>
         </tr>
       `;
       return;
@@ -33,7 +34,6 @@ export class LstPais extends HTMLElement {
       <tr>
         <td>${pais.id}</td>
         <td>${pais.nombrePais || 'N/A'}</td>
-        <td>${pais.codigoPais || 'N/A'}</td>
       </tr>
     `).join('');
   }
@@ -42,7 +42,7 @@ export class LstPais extends HTMLElement {
     const tbody = this.querySelector('#tbodyPaises');
     tbody.innerHTML = `
       <tr>
-        <td colspan="3" class="text-center text-danger">
+        <td colspan="2" class="text-center text-danger">
           Error al cargar los países. Por favor, intente nuevamente.
         </td>
       </tr>
@@ -65,12 +65,11 @@ export class LstPais extends HTMLElement {
                 <tr>
                   <th>ID</th>
                   <th>Nombre del País</th>
-                  <th>Código</th>
                 </tr>
               </thead>
               <tbody id="tbodyPaises">
                 <tr>
-                  <td colspan="3" class="text-center">
+                  <td colspan="2" class="text-center">
                     <div class="spinner-border text-primary" role="status">
                       <span class="visually-hidden">Cargando...</span>
                     </div>
